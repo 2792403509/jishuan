@@ -1,0 +1,19 @@
+html, body {
+	// background-color: #f5f5f5;
+}
+*{
+	box-sizing: border-box;
+}
+.popup-ios-concat{
+	padding-top: var(--status-bar-height);
+}
+
+.uni-navbar__header-btns-left{
+	width: 42px !important;
+}
+.uni-navbar .ini-navbar__content.uni-navbar--navbar--fixed.uni-navbar--border .uni-navbar__header.uni-navbar__content_view .uni-navbar__header-container.uni-navbar__content_view .uni-navbar__header-container-inner.uni-navbar__content_view .uni-nav-bar-text, .uni-navbar .uni-navbar__content.uni-navbar--fixed.uni-navbar--border .uni-navbar__header.uni-navbar__content_view .uni-navbar__header-container.uni-navbar__content_view .uni-navbar__header-container-inner.uni-navbar__content_view .uni-nav-bar-text{
+	font-size: 16px !important;
+	font-weight: 600 !important;
+}
+
+

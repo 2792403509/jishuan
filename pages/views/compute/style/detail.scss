@@ -1,0 +1,667 @@
+@import "@/pages/views/inspect/static/css/font.scss";
+
+// 导航栏样式修改，标题居中
+::v-deep .uni-navbar__header.uni-navbar__content_view {
+  position: relative;
+  .uni-nav-bar-text{
+    font-size: $font16;
+  }
+  .uni-navbar__header-btns.uni-navbar__header-btns-left.uni-navbar__content_view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0 !important;
+    padding: 0 !important;
+  }
+
+  .uni-navbar__header-btns-right {
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: $font16;
+
+    p {
+      font-size: $font16;
+      white-space:nowrap;
+    }
+  }
+
+  .rightChange {
+    display: flex;
+    p {
+      margin-right: 5px;
+      word-break: keep-all;
+      white-space:nowrap;
+    }
+
+    p:last-child {
+      margin-right: 0;
+    }
+  }
+}
+::v-deep .uni-navbar--border {
+  border-bottom-width: 0px !important;
+}
+.beforImg::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  // background-image无法引用本地资源，故需要用网络地址
+  background-image: url('@/pages/views/inspect/static/images/taizhang.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  margin-right: 7px;
+}
+
+.riskName::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  // background-image无法引用本地资源，故需要用网络地址
+  background-image: url('@/pages/views/inspect/static/images/yuan.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  margin-right: 2px;
+}
+
+.peopleImage::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  // background-image无法引用本地资源，故需要用网络地址
+  background-image: url('@/pages/views/inspect/static/images/peopleName.png');
+  background-repeat: no-repeat;
+  background-position: 0 1px;
+  background-size: 100% 100%;
+  margin-right: 7px;
+}
+
+.personalImage::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  // background-image无法引用本地资源，故需要用网络地址
+  background-image: url('@/pages/views/inspect/static/images/personnelfiles.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  margin-right: 7px;
+}
+
+.projectdeptImage::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  // background-image无法引用本地资源，故需要用网络地址
+  background-image: url('@/pages/views/inspect/static/images/projectdept.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  margin-right: 7px;
+}
+
+.beforImg,
+.personalImage,
+.projectdeptImage,
+.peopleImage {
+  background: rgb(32, 177, 170);
+  color: #fff !important;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 0 0 5px #20b1aa;
+  display: flex;
+  align-items: center;
+}
+
+.backImage {
+  background: rgb(32, 177, 170);
+  color: #fff !important;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 0 0 5px #20b1aa;
+}
+
+//台账字段图标
+.list-item-img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10rpx;
+}
+
+// 列表
+/*搜索框*/
+.main-container {
+  width: 100%;
+  height: 100%;
+
+  /*搜索框*/
+  .top-box {
+    width: 100%;
+    height: 64px;
+    background-color: #1fa9a3;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+
+    .u-input {
+      width: 94%;
+      height: 32px;
+      flex: 0 0 auto;
+      margin: 0 auto;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+
+  /*列表查询组件*/
+  .search-box {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px 10px 0 0;
+    background-color: #fff;
+    padding: 0 20rpx 0 32rpx;
+  }
+
+  /*列表展示区域*/
+  .list-box {
+    width: 100%;
+    height: calc(100% - 107px);
+    background-color: #fff;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+
+    /*暂无数据样式*/
+    .blank-views {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75%;
+      height: 230px;
+      background: url('@/pages/views/inspect/static/images/blank_bg.png')
+        no-repeat;
+      background-size: 100% 100%;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+    }
+
+    .space-box{//站位box
+      height: 1rpx
+    }
+    .big-card {
+      height: 100%;
+      overflow: auto;
+
+      .u-card {
+        width: 90%;
+        min-height: 110px;
+        //padding-bottom: 1rem;
+        background-color: #fff;
+        margin: 1rem auto;
+        box-shadow: 0 0 3px #20b1aa;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    }
+
+    .card-content {
+      width: calc(100% - 64rpx);
+      margin: 20rpx 32rpx 0 32rpx;
+      padding-bottom: 20rpx;
+      //border-bottom: dashed 1px #20afa8;
+
+      .first-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-txt {
+          min-width: 110px;
+          //max-width: 48%;
+          font-size: $font16;
+          font-weight: 600;
+          min-height: 64rpx;
+          display: flex;
+          align-items: center;
+          padding-right: 10px;
+        }
+
+        .right-txt {
+          // width: calc(100% - 110px);
+          height: 100%;
+          flex: 1;
+          //max-width: 55%;
+          text-align: right;
+          color: #666666;
+          font-size: $font16;
+          word-break: break-all;
+          // display: flex;
+          // align-items: center;
+          /* 强制不换行 */
+          white-space: pre;
+          /* 文字的超出部分用省略号代替 */
+          text-overflow: ellipsis;
+          /* 隐藏溢出内容 */
+          overflow: hidden;
+        }
+
+        .right-txt-line {
+          width: 100%;
+          padding: 5rpx;
+        }
+      }
+    }
+
+    .btn-content {
+      display: flex;
+      border-top: 1px solid #ccc !important;
+      align-items: center;
+
+      .u-button {
+        flex: 1;
+        margin-left: 0;
+        background-color: #fff !important;
+        border-color: #fff !important;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .u-button:nth-child(2) {
+        border-left: 1px solid #ccc !important;
+      }
+    }
+
+    .card-title {
+      width: 100%;
+      border-bottom: 1px solid #20b1aa;
+      min-height: 36px;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      box-shadow: 0 0 5px #20b1aa;
+      align-items: center;
+      display: flex;
+      line-height: 20px;
+      padding: 5px 15px;
+      font-size: $font16;
+      background: #20b1aa;
+      color: #ffffff;
+      font-weight: 600;
+      justify-content: flex-start;
+
+      .left-long-text{
+        flex:1;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .textWordTitle {
+        color: #fff;
+        width: calc(100% - 20px);
+        /* 强制不换行 */
+        white-space: nowrap;
+        /* 文字的超出部分用省略号代替 */
+        text-overflow: ellipsis;
+        /* 隐藏溢出内容 */
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+// 详情界面
+.detail_text_list {
+  .first-title {
+    width: 100%;
+    //height: 3rem;
+    // background: rgba(32, 177, 170, 0.1);
+    //padding: 0 1rem;
+    color: #333;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $font18;
+
+    .u-icon {
+      margin-left: auto;
+    }
+
+    .titleText {
+      color: #333;
+      font-weight: 500;
+    }
+
+    .no-update {
+      color: #ff6766 !important;
+      margin-left: 13rem;
+      font-size: 13px;
+    }
+  }
+
+  .show {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .circle {
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      color: #fff;
+      background-color: #20b1aa;
+      // margin-left: 1rem;
+      text-align: center;
+    }
+  }
+  /*表单中的新增表格区域 start*/
+  .table-box{
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px rgba(32, 177, 170, 0.2);
+    padding: 5px;
+    margin:10px 0;
+  }
+  .table-show-title{
+    width: 100%;
+    height:30px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .circle {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: #20b1aa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .list-content {
+    margin-left: 10px;
+    margin-right: 1rem;
+  }
+  /*表单中的新增表格区域 end*/
+  ::v-deep .u-form-item__body {
+    display: block !important;
+    padding: 5px 0 !important;
+  }
+  ::v-deep .u-form-item__body__right__message{
+    margin-left: 0 !important;
+  }
+  /*区块*/
+  .form-card {
+    width: 100%;
+    padding: 28rpx 28rpx 20rpx 28rpx;
+    margin-bottom: 10px;
+    background: white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ::v-deep .u-form-item__body__right__content__slot {
+    justify-content: start;
+  }
+
+  ::v-deep .u-form-item__body__left__content__label {
+    color: #333333;
+    font-size: $font16;
+    margin-bottom: 5px;
+  }
+
+  .u-cell {
+    width: 98%;
+    margin-left: 1%;
+    margin-bottom: 3px;
+    margin-top: 5px;
+    position: relative;
+  }
+  ::v-deep .u-form-item {
+    .u-form-item__body {
+      .u-form-item__body__right {
+        .u-form-item__body__right__content {
+          .u-form-item__body__right__content__slot {
+            .u-text {
+              .u-text__value {
+                span {
+                  color: #303133 !important;
+                  font-size: $font16 !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ::v-deep .u-cell {
+    .u-form-item {
+      .u-form-item__body {
+        .u-form-item__body__right {
+          .u-form-item__body__right__content {
+            .u-form-item__body__right__content__slot {
+              .u-text {
+                .u-text__value {
+                  span {
+                    color: #303133 !important;
+                    font-size: $font16 !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ::v-deep .uni-input-input,
+  ::v-deep .u-cell__title-text,
+  ::v-deep .u-cell__value {
+    font-size: $font16;
+    color: #303133;
+    text-align: left;
+  }
+
+  ::v-deep .uni-input-placeholder {
+    text-align: left !important;
+  }
+
+  /*表格卡片*/
+  .u-card {
+    width: 100%;
+    border-radius: 10px;
+    min-height: 110px;
+    padding: 0 40rpx;
+    margin: 10px 0;
+    box-shadow: 0 0 3px 1px rgba(32, 177, 170, 0.2);
+    margin-bottom: 10px;
+    position: relative;
+
+    .card-item {
+      width: 100%;
+      border-bottom: 1px dashed rgb(214, 215, 217);
+      padding-bottom: 10px;
+
+      .title {
+        width: 100%;
+        font-weight: 500;
+        font-size: $font16;
+        color: #333333;
+        padding: 10px 0;
+      }
+
+      .content {
+        width: 100%;
+        font-size: $font16;
+        color: #303133;
+        word-wrap: break-word;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .left-line {
+      width: 6px;
+      height: 90%;
+      border-radius: 0 5px 5px 0;
+      background: #20b1aaff;
+      position: absolute;
+      left: 0;
+      top: 5%;
+    }
+  }
+
+  .form-text {
+    width: 100%;
+    position: relative;
+
+    .imageSj {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+
+  /*展开后的文字样式*/
+  .normal-content {
+    white-space: pre-wrap;
+    height: auto;
+    color: #303133;
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  .textarea-content {
+    //width: 630rpx;
+    color: #303133;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+
+  .file-box {
+    width: 100%;
+    min-height: 5px;
+    border-bottom: solid 1px #e7e7e7;
+    .file-img{
+      width: 50rpx;
+      height: 50rpx;
+      flex-shrink: 0
+    }
+    .file-item {
+      width: 100%;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      color: #666666;
+      font-size: $font14;
+      justify-content: start;
+
+      ::v-deep .u-image {
+        margin-right: 10px;
+      }
+      .file-name{
+        width: calc(100% - 100rpx);
+        word-break: break-all;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  .g-upload-box {
+    margin-top: 10px;
+  }
+
+  .delete-box {
+    width: 16px;
+    height: 16px;
+    background: #ff6766;
+    margin-left: auto;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+  }
+
+  .form_bottom {
+    margin-bottom: 3%;
+  }
+  .none-text{
+    color: rgb(192, 196, 204);
+    font-size: $font16;
+  }
+  .none-box{
+    color: rgb(192, 196, 204);
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font16;
+  }
+}
+
+//图片格式1
+.g-pic-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // flex: 1;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+}
+
+::v-deep .u-radio{
+  margin-right: 10px;
+}
+::v-deep .u-radio__text{
+  font-size: $font16 !important;
+  line-height:normal !important;
+}
+::v-deep .u-button__text{
+  font-size: $font16 !important;
+}
+.dateTimeClass{
+  font-size: $font16;
+}
+.pad0{
+  padding: 0 !important;
+}
+//新增、详情页面中的灰色间隔
+.blank-bar{
+  width: 100%;
+  height: 10px;
+  margin-top: -10px;
+  background: #f1f2f5 !important;
+}
